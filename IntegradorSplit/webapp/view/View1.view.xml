@@ -1,0 +1,104 @@
+<mvc:View controllerName="IntegradorSplit.IntegradorSplit.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+>
+    <Page
+		title="{modeloSeleccionado>/ProductName}">
+		<content>
+            <ObjectHeader
+                    id="oh1"
+                    responsive="true"
+                    fullScreenOptimized="false"
+                    binding="{modeloSeleccionado>/}"
+                    intro="{Description}"
+                    title="{modeloSeleccionado>/ProductName}"
+                    number= "{	path: 'modeloSeleccionado>UnitPrice',
+							    formatter: '.Formatear.formatValor'
+						}"
+                    numberState="Success"
+                    backgroundDesign="Translucent"
+                    class="sapUiResponsivePadding--header" >
+            <ObjectAttribute
+                title="{i18n>ohCategoria}"
+                text="{modeloCategoria>/CategoryName}"/>
+            <ObjectAttribute
+                text=" {i18n>ohDescripcion} : {modeloCategoria>/Description}"/>
+            <statuses>
+                <ObjectStatus
+                    text="{	path: 'modeloSeleccionado>UnitsInStock',
+                            formatter: '.Formatear.formatStock'}"
+                    state="{ path: 'modeloSeleccionado>UnitsInStock',
+                            formatter: '.Formatear.formatStockColor'}"
+                />
+            </statuses>
+		<headerContainer>
+			<IconTabBar
+				id="itb1"
+				selectedKey="key3"
+				upperCase="true"
+				class="sapUiResponsiveContentPadding">
+				<items>
+				<IconTabFilter text="{i18n>itfInformacionGeneral}" key="info">
+                    <VBox>
+                        <HBox>
+                        <Label text="{i18n>lblIdProducto}"/>
+					    <Text id="productoId" text="  {modeloSeleccionado>/ProductID}" />
+                        </HBox>
+                        <HBox>
+                        <Label text="{i18nlblCantUnidad}"/>
+					    <Text id="productoCantUnidad" text="  {modeloSeleccionado>/QuantityPerUnit}" />
+                        </HBox>
+                        <HBox>
+                        <Label text="{i18n>lblDescontinuado}"/>
+					    <Text id="Descontinuado" text="{path: 'modeloSeleccionado>Discontinued',
+                            formatter: '.Formatear.formatDescontinuado'}" />
+                        </HBox>
+                    </VBox>
+                </IconTabFilter>
+                <IconTabFilter text="{i18n>itfProveedor}" key="attachments">
+                        <HBox>
+                        <Label text="{i18n>lblIdProveedor}"/>
+					    <Text id="ProveedorID" text="  {modeloSupplier>/SupplierID}" />
+                        </HBox>
+                        <HBox>
+                        <Label text="{i18n>lblNombreCompania}"/>
+					    <Text id="CompaniaNombre" text="  {modeloSupplier>/CompanyName}" />
+                        </HBox>
+                        <HBox>
+                        <Label text="{i18n>lblContacto}"/>
+					    <Text id="Contacto" text="  {modeloSupplier>/ContactName}" />
+                        </HBox>
+                        <HBox>
+                        <Label text="{i18n>lblTelefono}"/>
+					    <Text id="Telefono" text="  {modeloSupplier>/Phone}" />
+                        </HBox>
+                        <HBox>
+                        <Label text="{i18n>lblDireccion}"/>
+					    <Text id="Direccion" text="  {modeloSupplier>/Address}" />
+                        </HBox>
+                        <HBox>
+                        <Label text="{i18n>lblCiudad}"/>
+					    <Text id="Ciudad" text="  {modeloSupplier>/City}" />
+                        </HBox>
+                        <HBox>
+                        <Label text="{i18n>lblPais}"/>
+					    <Text id="Pais" text="  {modeloSupplier>/Country}" />
+                        </HBox>
+                        <HBox>
+                        <Label text="{i18n>lblCodPostal}"/>
+					    <Text id="CodigoPostal" text="  {modeloSupplier>/PostalCode}" />
+                        </HBox>
+                </IconTabFilter>
+				</items>
+			</IconTabBar>
+		</headerContainer>
+	</ObjectHeader>
+    </content>
+    <footer>
+        <OverflowToolbar>
+            <ToolbarSpacer/>
+            <Button text="{i18n>btnEdit}" press="onBtnEditPress"/>
+            <Button text="{i18n>btnDelete}" press="onBtnDeletePress"/>
+            <Button text="{i18n>btnCopy}" press="onBtnCopyPress"/>
+        </OverflowToolbar>
+    </footer>   
+	</Page>
+</mvc:View>

@@ -1,0 +1,6 @@
+<mvc:View controllerName="IntegradorSplit.IntegradorSplit.controller.AppIntegrador" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<SplitApp id="app">
+		</SplitApp>
+	</Shell>
+</mvc:View>

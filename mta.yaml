@@ -1,0 +1,56 @@
+_schema-version: "3.2"
+ID: Integrador2-SplitApp
+version: 0.0.1
+modules:
+- name: integrador2-splitapp-approuter
+  type: approuter.nodejs
+  path: integrador2-splitapp-approuter
+  requires:
+  - name: Integrador2-SplitApp_html_repo_runtime
+  - name: dest_Integrador2-SplitApp
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+- name: Integrador2-SplitApp_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: Integrador2-SplitApp_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - IntegradorSplit-content.zip
+      name: IntegradorSplit
+      target-path: resources/
+- name: IntegradorSplit
+  type: html5
+  path: IntegradorSplit
+  build-parameters:
+    builder: custom
+    commands:
+    - npm run build
+    supported-platforms: []
+resources:
+- name: Integrador2-SplitApp_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: Integrador2-SplitApp_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
+- name: dest_Integrador2-SplitApp
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: destination
+    service-plan: lite
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm install

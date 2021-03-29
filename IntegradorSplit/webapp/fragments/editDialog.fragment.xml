@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+xmlns:core="sap.ui.core">                
+        <Dialog id='idEditDialog'
+                title='{i18n>titleDialog} {modeloSeleccionado>/ProductName} ' >
+                    <form:SimpleForm title='Atributos a editar' >
+                        <VBox >
+                        <Text text="{i18n>txtIdProducto}  {modeloSeleccionado>/ProductID} "></Text>
+                        <Text text="{i18n>txtNombreProducto} {modeloSeleccionado>/ProductName} "></Text>
+                        <Text text="{i18n>txtIdProveedor}  {modeloSeleccionado>/SupplierID}"></Text>
+                        <Text text="{i18n>txtCategoria} {modeloSeleccionado>/CategoryID} "></Text>
+                        <Text text="{i18n>txtCantXUnidad}  {modeloSeleccionado>/QuantityPerUnit} "></Text>
+                        <Text text="{i18n>txtPrecioXUnidad} {modeloSeleccionado>/UnitPrice} "></Text>
+                        <Text text="{i18n>txtUniEnStock} {modeloSeleccionado>/UnitsInStock}"></Text>
+                        <Text text="{i18n>txtUniEnOrden} {modeloSeleccionado>/UnitsOnOrder}"></Text>
+                        <Text text="{i18n>txtNvlReordenamiento} {modeloSeleccionado>/ReorderLevel} "></Text>
+                        <Text text="{i18n>txtDescontinuado} {modeloSeleccionado>/Discontinued} "></Text>
+                        </VBox>
+                    </form:SimpleForm>
+                    <beginButton>
+                        <Button text="{i18n>btnCerrarDialog}" press="onCloseDialog"></Button>
+                    </beginButton>
+        </Dialog>
+</core:FragmentDefinition>

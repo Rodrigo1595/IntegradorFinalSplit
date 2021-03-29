@@ -1,0 +1,25 @@
+<mvc:View controllerName="IntegradorSplit.IntegradorSplit.controller.MasterIntegrador" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+
+    <Page title="{i18n>title} ( {largoModel>/} )">
+        <content>
+        <SearchField placeholder="{i18n>placeholderSearchField}" liveChange="onChangeBuscar"></SearchField>
+        <List   
+                id="idLista"
+				items="{modeloProductos>/value}"
+				mode="SingleSelectMaster"
+				selectionChange="onSelectionChange">
+			<items>
+				<StandardListItem title="{modeloProductos>ProductName}" 
+                    info="{	path: 'modeloProductos>UnitPrice',
+							formatter: '.Formatear.formatValor'
+						}"
+					type="Active"
+					press="onSelectionChange"/>
+			</items>
+		</List>
+        </content>
+
+    </Page>
+
+
+</mvc:View>
