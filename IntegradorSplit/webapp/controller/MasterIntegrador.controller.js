@@ -234,9 +234,8 @@ sap.ui.define([
                     if(DeviceAcceleration.system.desktop){
                         oDialog.addStyleClass("sapUISizeCompact");
                     }
-
                     
-                    }
+                }
                     return oDialog
 
             },

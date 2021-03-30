@@ -13,6 +13,7 @@
                     number= "{	path: 'modeloSeleccionado>UnitPrice',
 							    formatter: '.Formatear.formatValor'
 						}"
+                    numberUnit="USD"
                     numberState="Success"
                     backgroundDesign="Translucent"
                     class="sapUiResponsivePadding--header" >
@@ -43,7 +44,7 @@
 					    <Text id="productoId" text="  {modeloSeleccionado>/ProductID}" />
                         </HBox>
                         <HBox>
-                        <Label text="{i18nlblCantUnidad}"/>
+                        <Label text="{i18n>lblCantUnidad}"/>
 					    <Text id="productoCantUnidad" text="  {modeloSeleccionado>/QuantityPerUnit}" />
                         </HBox>
                         <HBox>
