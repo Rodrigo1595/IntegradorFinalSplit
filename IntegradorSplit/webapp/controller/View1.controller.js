@@ -14,6 +14,7 @@ sap.ui.define([
 		return Controller.extend("MasterDetail.MasterDetail.controller.Detail", {
             Formatear:Formatter,
 			onInit: function () {
+                
             },
 
             onCloseDialog: function(){

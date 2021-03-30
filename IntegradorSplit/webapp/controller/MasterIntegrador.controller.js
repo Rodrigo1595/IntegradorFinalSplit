@@ -26,7 +26,7 @@ sap.ui.define([
             this.loadModelBase();
             //Cargar Dialogs aqui
             this.Dialogs = {};
-
+            
             //Inicializar grupos
 
             this.mGroupFunctions = {
@@ -162,14 +162,8 @@ sap.ui.define([
                         oDialog = sap.ui.xmlfragment(sDialogFragmentName,this);
                         this.getView().addDependent(oDialog);
                         this.Dialogs[sDialogFragmentName] = oDialog;
-                    }
-                    //Setea filtro/s
-                    oDialog.setFilterSearchOperator(mLibrary.StringFilterOperator.Contains);
-                    if(DeviceAcceleration.system.desktop){
-                        oDialog.addStyleClass("sapUISizeCompact");
-                    }
 
-                    if(sDialogFragmentName === Constants.routes.FRAGMENTS.filterDialog){
+                        if(sDialogFragmentName === Constants.routes.FRAGMENTS.filterDialog){
                         //Obtener modelo
                         var oModelJSON = this.getOwnerComponent().getModel(Constants.model.modeloProductos);
                         //Obtener propiedades
@@ -234,6 +228,14 @@ sap.ui.define([
                             text: "UnitPrice",
                             items: UnitPriceFilter
                         })); 
+                    }
+                    //Setea filtro/s
+                    oDialog.setFilterSearchOperator(mLibrary.StringFilterOperator.Contains);
+                    if(DeviceAcceleration.system.desktop){
+                        oDialog.addStyleClass("sapUISizeCompact");
+                    }
+
+                    
                     }
                     return oDialog
 
@@ -308,7 +310,7 @@ sap.ui.define([
                     aFilters.push(oFilter);
                 });
                 oBinding.filter(aFilters);
-                
+
                 //Actualizar Largo
                 //Seleccionar items a vincular
                 var oBindingInfo = sListaId.getBinding(Constants.ids.items);
