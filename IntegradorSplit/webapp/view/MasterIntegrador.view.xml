@@ -2,7 +2,12 @@
 
     <Page title="{i18n>title} ( {largoModel>/} )">
         <content>
+        <HBox >
         <SearchField placeholder="{i18n>placeholderSearchField}" liveChange="onChangeBuscar"></SearchField>
+        <Button tooltip="{i18n>btnOrdenar}" icon="sap-icon://sort" press="onSort"/>
+        <Button tooltip="{i18n>btnAgrupar}" icon="sap-icon://group-2" press="onGroup"/>
+        <Button tooltip="{i18n>btnFiltrar}" icon="sap-icon://filter" press="onFilter"/>
+        </HBox>
         <List   
                 id="idLista"
 				items="{modeloProductos>/value}"

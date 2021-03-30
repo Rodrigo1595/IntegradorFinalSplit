@@ -17,7 +17,8 @@ sap.ui.define([],function(){
         //Propiedades del modelo 
         properties: {
             ProductName:"/ProductName",
-            valueDefault:"/value/0"
+            valueDefault:"/value/0",
+            rootValue:'/value'
         },
 
         ids: {
@@ -36,7 +37,10 @@ sap.ui.define([],function(){
                 productos:"/V3/Northwind/Northwind.svc/Products"
             },
             FRAGMENTS:{
-                dialogEdit:"IntegradorSplit.IntegradorSplit.fragments.editDialog"
+                dialogEdit:"IntegradorSplit.IntegradorSplit.fragments.editDialog",
+                sortDialog:"IntegradorSplit.IntegradorSplit.fragments.sortDialog",
+                groupByDialog:"IntegradorSplit.IntegradorSplit.fragments.groupDialog",
+                filterDialog:"IntegradorSplit.IntegradorSplit.fragments.filterDialog"
             }
         }
     }

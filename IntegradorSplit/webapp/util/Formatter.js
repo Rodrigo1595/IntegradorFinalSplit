@@ -1,13 +1,14 @@
 sap.ui.define([],function () {
     'use strict';
-   
+
+  
     return{        
             
             formatValor: function(sCodigo){
                  if(!sCodigo){
                     return;
                 }else{
-                    let nValor = Math.floor(sCodigo* 100) / 100;
+                    let nValor = Number.parseFloat(sCodigo).toFixed(2);
                     return "$"+nValor;
                 }
             },
