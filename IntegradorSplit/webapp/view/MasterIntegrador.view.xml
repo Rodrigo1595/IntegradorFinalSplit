@@ -4,9 +4,9 @@
         <content>
         <HBox >
         <SearchField placeholder="{i18n>placeholderSearchField}" liveChange="onChangeBuscar"></SearchField>
-        <Button tooltip="{i18n>btnOrdenar}" icon="sap-icon://sort" press="onSort"/>
-        <Button tooltip="{i18n>btnAgrupar}" icon="sap-icon://group-2" press="onGroup"/>
-        <Button tooltip="{i18n>btnFiltrar}" icon="sap-icon://filter" press="onFilter"/>
+        <Button tooltip="{i18n>btnOrdenar}" type="Transparent" icon="sap-icon://sort" press="onSort"/>
+        <Button tooltip="{i18n>btnAgrupar}" type="Transparent" icon="sap-icon://group-2" press="onGroup"/>
+        <Button tooltip="{i18n>btnFiltrar}" type="Transparent" icon="sap-icon://filter" press="onFilter"/>
         </HBox>
         <List   
                 id="idLista"
